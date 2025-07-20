@@ -37,6 +37,8 @@ def speak(text: str):
     Parámetros:
         text (str): Texto que se va a vocalizar
     """
+    voices = engine.getProperty('voices')
+    engine.setProperty('voice', voices[0].id)#voz masculina 0 voz femenina 1
     engine.say(text)  # Pasar el texto para la síntesis
     engine.runAndWait()  # Realizar la síntesis de voz y esperar a que termine
 
